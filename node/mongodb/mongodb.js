@@ -8,7 +8,7 @@ app.set('port', process.env.PORT || 3000)
 app.use(morgan('dev'))
 
 var db;
-var databaseUrl = 'mongodb://13.125.8.3:27017/'
+var databaseUrl = 'mongodb://3.39.230.154:27017/'
 
 app.get('/', (req, res) => {
 	res.send('Web Server Started~!!')
