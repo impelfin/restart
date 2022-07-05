@@ -8,8 +8,8 @@ import pandas as pd
 import xmltodict
 import json
 
-before_day = (datetime.date.today() - datetime.timedelta(days=10)).strftime('%Y%m%d')
-#before_day = (datetime.date.today() - relativedelta(years=1)).strftime('%Y%m%d')
+#before_day = (datetime.date.today() - datetime.timedelta(days=10)).strftime('%Y%m%d')
+before_day = (datetime.date.today() - relativedelta(years=1)).strftime('%Y%m%d')
 today = datetime.date.today().strftime('%Y%m%d')
 
 key='B%2FNiJnYmkZV1%2FK7ulvZI4MoSXvCTDfNAd0Snw%2Bk6g4%2BbMk1LoGVhd75DJahjv4K35Cr9jh9RX0j%2BM89grKBYsw%3D%3D'
