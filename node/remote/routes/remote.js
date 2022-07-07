@@ -102,10 +102,10 @@ app.put("/api/users/update", (req, res) => {
 // patch
 app.patch("/api/users/update/:user_id", (req, res) => {
   const options = {
-    uri : 'http://13.209.234.117:3000/api/users/'+req.params.user_id,
+    uri : 'http://13.209.234.117:3000/api/users/'+req.params.id,
     method : 'PATCH',
     form : {
-      id : req.body.id,
+      id : req.params.id,
       name : req.body.name
     }
   }
