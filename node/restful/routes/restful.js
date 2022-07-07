@@ -52,4 +52,55 @@ app.get("/api/users/:user_id", (req, res) => {
   res.json({ok: true, user: user})
 })
 
+// post
+app.post("/api/users/userBody", (req, res) => {
+  const user_id = req.body.id
+  const user = users.filter(data => data.id == user_id)
+  res.json({ok: true, user: user})
+})
+
+// post add
+app.post("/api/users/add", (req, res) => {
+  const { id, name } = req.body
+  const user = users.concat({ id, name })
+  res.json({ok: true, user: user})
+})
+
+// put
+app.put("/api/users/update", (req, res) => {
+  const { id, name } = req.body
+  const user = users.map(data => {
+    if(data.id == id) data.name = name
+
+    return {
+      id : data.id,
+      name : data.name
+    }
+  })
+  res.json({ok: true, user: user})
+})
+
+// patch
+app.patch("/api/users/update/:user_id", (req, res) => {
+  const { user_id } = req.params
+  const { name } = req.body
+
+  const user = users.map(data => {
+    if(data.id == user_id) data.name = name
+
+    return {
+      id : data.id,
+      name : data.name
+    }
+  })
+  res.json({ok: true, user: user})
+})
+
+// delete
+app.delete("/api/users/delete", (req, res) => {
+  const { user_id } = req.body
+  const user = users.filter(data => data.id != user_id )
+  res.json({ok: true, user: user})
+})
+
 module.exports = app;
