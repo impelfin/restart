@@ -10,7 +10,7 @@
       <input type="button" value="Life - Weather API GET data" onclick='document.targetURL.location.href="/getdata"'><p>
       <input type="button" value="Life - Weather Mongodb data" onclick='document.targetURL.location.href="/list"'><p>
       areaNo <input type="text" name="input" size="12">
-      <input type="button" value="get" onclick='document.targetURL.location.href="/get?input-"+document.mongoform.input.value'><p>
+      <input type="button" value="get" onclick='document.targetURL.location.href="/get?input="+document.mongoform.input.value'><p>
   </form>
 <iframe name="targetURL" class="iframe-preview center" width="90%" height="500" style="border:none;" src="http://13.209.234.117:3000/list">
 </iframe>
