@@ -71,16 +71,41 @@ router.get('/list', function(req, res, next) {
            if(err) console.log('err');
            res.writeHead(200);
            var template = `
-           <!doctype html>
-           <html>
-           <head>
-             <title>Result</title>
-             <meta charset="utf-8">
-           </head>
-           <body>
-             ${docs}
-           </body>
-           </html>
+             <!doctype html>
+             <html>
+             <head>
+               <title>Result</title>
+               <meta charset="utf-8">
+             </head>
+             <body>
+               <table border="1" margin: auto; text-align: center;>
+                 <tr>
+                   <th> code </th>
+                   <th> areaNo </th>
+                   <th> date </th>
+                   <th> today </th>
+                   <th> tomorrow </th>
+                   <th> dayaftertomorrow </th>
+                   <th> twodaysaftertomorrow </th>
+                 </tr>
+             `;
+             for(var i=0;i<docs.length;i++) {
+               template += `
+                 <tr>
+                   <th>${docs[i]['code']}</th>
+                   <th>${docs[i]['areaNo']}</th>
+                   <th>${docs[i]['date']}</th>
+                   <th>${docs[i]['today']}</th>
+                   <th>${docs[i]['tomorrow']}</th>
+                   <th>${docs[i]['dayaftertomorrow']}</th>
+                   <th>${docs[i]['twodaysaftertomorrow']}</th>
+                 </tr>
+                 `;
+               }
+               template +=`
+               </table>
+             </body>
+             </html>
           `;
            res.end(template);
       });
