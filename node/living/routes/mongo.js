@@ -78,7 +78,32 @@ router.get('/list', function(req, res, next) {
          <meta charset="utf-8">
        </head>
        <body>
-         ${docs}
+        <table border="1" margin:auto; text-align:center;>
+          <tr>
+            <th>code</th>
+            <th>areaNo</th>
+            <th>date</th>
+            <th>today</th>
+            <th>tomorrow</th>
+            <th>dayaftertomorrow</th>
+            <th>twodaysaftertomorrow</th>
+          </tr>
+        `;
+        for(var i=0; i<docs.length; i++) {
+         template += `
+          <tr>
+            <th>${docs[i]['code']}</th>
+            <th>${docs[i]['areaNo']}</th>
+            <th>${docs[i]['date']}</th>
+            <th>${docs[i]['today']}</th>
+            <th>${docs[i]['tomorrow']}</th>
+            <th>${docs[i]['dayaftertomorrow']}</th>
+            <th>${docs[i]['twodayaftertomorrow']}</th>
+          </tr>
+         `
+        }
+        template += `
+          </table>
        </body>
        </html>
       `;
