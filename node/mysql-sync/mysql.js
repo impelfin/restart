@@ -24,7 +24,9 @@ let insertId = data.ST_ID;
 // insert data into st_info table
 result = connection.query(
     "INSERT INTO st_info values (?, ?, ?)", [
-        insertId, data.NAME, data.DEPT
+        insertId,
+        data.NAME,
+        data.DEPT
 ]);
 
 // Select all rows from st_info table
@@ -34,7 +36,7 @@ console.log(result);
 // update row
 result = connection.query("UPDATE st_info SET DEPT=? WHERE ST_ID=?", [
     "Game",
-    insertId,
+    insertId
 ]);
 
 // Select all rows from st_info table
