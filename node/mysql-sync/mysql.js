@@ -33,7 +33,7 @@ result = connection.query(
 result = connection.query("SELECT * FROM st_info");
 console.log(result);
 
-// update row
+// update row from st_info table
 result = connection.query("UPDATE st_info SET DEPT=? WHERE ST_ID=?", [
     "Game",
     insertId
@@ -43,7 +43,7 @@ result = connection.query("UPDATE st_info SET DEPT=? WHERE ST_ID=?", [
 result = connection.query("SELECT * FROM st_info");
 console.log(result);
 
-// delete row
+// delete row from st_info table
 result = connection.query("DELETE FROM st_info WHERE ST_ID=?", [
     insertId,
 ]);
