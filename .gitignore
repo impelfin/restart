@@ -3,4 +3,6 @@ config
 .ftpconfig
 
 # node_modules 제외
-/*/node_modules
+node/*/node_modules
+
+node/config/pool.js

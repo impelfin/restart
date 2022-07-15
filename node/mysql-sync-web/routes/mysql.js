@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const CircularJSON = require('circular-json')
 const request = require('request')
 
-var mysql = require("sync-mysql");
+const mysql = require("sync-mysql");
 
 const app = express()
 
