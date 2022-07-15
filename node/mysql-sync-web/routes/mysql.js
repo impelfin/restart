@@ -2,8 +2,15 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const CircularJSON = require('circular-json')
 const request = require('request')
+const mysql = require("sync-mysql")
+const env =require("dotenv").config({ path:"/data/node/config/.env"});
 
-const mysql = require("sync-mysql");
+var connection = new mysql({
+		host : process.env.host,
+		user : process.env.user,
+		password : process.env.password,
+		database : process.env.database
+});
 
 const app = express()
 
@@ -11,13 +18,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended : false }))
 app.use(express.json())
 app.use(express.urlencoded({ extended : true }))
-
-var connection = new mysql({
-		host : "database-1.c9tceinqozeu.ap-northeast-2.rds.amazonaws.com",
-		user : "admin",
-		password : "admin1234",
-		database : "st_db",
-});
 
 app.get("/Hello", (req, res)=> {
   res.send("Hello World")

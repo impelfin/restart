@@ -5,4 +5,8 @@ config
 # node_modules 제외
 node/*/node_modules
 
+# /data/node/mysql-sync-web
+node/config/.env
+
+# /data/node/mysql2-web
 node/config/pool.js
