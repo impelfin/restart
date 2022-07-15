@@ -1,13 +1,14 @@
 const mysql = require("mysql2/promise");
+const env =require("dotenv").config({ path:"/data/node/config/.env"});
 
 const db = async () => {
   try {
     // db connection
     let connection = await mysql.createConnection({
-      host: "database-1.c9tceinqozeu.ap-northeast-2.rds.amazonaws.com",
-      user: "admin",
-      password: "admin1234",
-      database: "st_db",
+      host : process.env.host,
+  		user : process.env.user,
+  		password : process.env.password,
+  		database : process.env.database
     });
 
     // Select all rows from st_info table
@@ -16,7 +17,7 @@ const db = async () => {
 
     // insert data
     let data = {
-      ST_ID : "202004",
+      ST_ID : "20204",
       NAME : "Moon",
       DEPT : "Computer"
     };
